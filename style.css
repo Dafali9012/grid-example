@@ -1,5 +1,5 @@
 * {
-    background: rgb(22, 22, 22);
+    background: salmon;
     color: white;
 }
 
@@ -8,16 +8,92 @@ body {
     margin: 0;
 }
 
-.grid {
+.grid-top {
     display: grid;
-    grid-template-columns: 1fr 100px 2fr;
-    grid-template-rows: 1fr 1fr;
-    /*
-    grid-column-gap: 10px;
-    row-gap: 50px;
-    */
+    grid-template: 1fr 10% 5fr/1fr 2fr 1fr;
+    height: 100%;
+    /*border: 2px solid crimson;*/
 }
 
-section {
-    border:2px solid white;
+.grid-top>#header {
+    display: grid;
+    grid-template: 1fr / 65% 15% 20%;
+    grid-column-start: 2;
+}
+.grid-top>#strip {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    margin: 15px 0;
+}
+.grid-top>#content {
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+#strip-text {
+    display: grid;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    grid-template: 1fr / 1fr 1fr;
+}
+#strip-text>p:last-child {
+    text-align: right;
+}
+#content {
+    display: grid;
+    grid-template: 1fr / 6fr 4fr;
+}
+#title {
+    background-image: url("title.png");
+    background-size: cover;
+}
+#date {
+    transform: rotate(-90deg);
+    font-size: 24px;
+    overflow: auto;
+    text-align: center;
+    background-color: transparent;
+    padding-top: 10px;
+}
+#feature {
+    font-size: 28px;
+}
+#content-left {
+    display: grid;
+    grid-template: 70% 25% 5%/ 1fr;
+}
+#main-article {
+    border: 2px solid black;
+    display: grid;
+    grid-template: 3fr 2fr/ 1fr;
+}
+#weather {
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+#content-right {
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr;
+    margin-left: 20px;
+}
+#main-article>.image {
+    background-image: url("main-article.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#main-article>.text>p:nth-child(2) {
+    margin: 0;
+    font-size: 38px;
+}
+#main-article>.text>p:nth-child(1) {
+    margin: 0;
+    font-size: 8px;
+}
+#main-article p {
+    text-align: center;
+}
+#main-article>.text {
+    border-top: 2px solid black;
+}
+p {
+    margin: 8px 0;
 }
