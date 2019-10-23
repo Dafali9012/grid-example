@@ -76,9 +76,10 @@ body {
     margin-left: 20px;
 }
 #main-article>.image {
-    background-image: url("main-article.PNG");
     background-size: contain;
     background-repeat: no-repeat;
+    width: 90%;
+    padding-left: 25px;
 }
 #main-article>.text>p:nth-child(2) {
     margin: 0;
