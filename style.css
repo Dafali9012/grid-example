@@ -1,18 +1,16 @@
 * {
-    background: salmon;
-    color: white;
+    color: black;
 }
 
 body {
     min-height: 100vh;
     margin: 0;
+    background-color: skyblue;
 }
 
 .grid-top {
     display: grid;
-    grid-template: 1fr 10% 5fr/1fr 2fr 1fr;
-    height: 100%;
-    /*border: 2px solid crimson;*/
+    grid-template: 2fr 1fr 10fr/1fr 2fr 1fr;
 }
 
 .grid-top>#header {
@@ -28,43 +26,37 @@ body {
 .grid-top>#content {
     grid-column-start: 2;
     grid-row-start: 3;
+    display: grid;
+    grid-template: 1fr / 6fr 4fr;
 }
 #strip-text {
     display: grid;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     grid-template: 1fr / 1fr 1fr;
 }
 #strip-text>p:last-child {
     text-align: right;
 }
-#content {
-    display: grid;
-    grid-template: 1fr / 6fr 4fr;
-}
 #title {
     background-image: url("title.png");
     background-size: cover;
 }
-#date {
+#date>p{
     transform: rotate(-90deg);
     font-size: 24px;
-    overflow: auto;
     text-align: center;
     background-color: transparent;
-    padding-top: 10px;
 }
 #feature {
     font-size: 28px;
 }
 #content-left {
     display: grid;
-    grid-template: 70% 25% 5%/ 1fr;
+    grid-template: auto 25% 5%/ 1fr;
 }
 #main-article {
     border: 2px solid black;
-    display: grid;
-    grid-template: 3fr 2fr/ 1fr;
 }
 #weather {
     border-top: 2px solid gray;
@@ -78,12 +70,12 @@ body {
 #main-article>.image {
     background-size: contain;
     background-repeat: no-repeat;
-    width: 90%;
-    padding-left: 25px;
+    width: 100%;
+    /*padding-left: 25px;*/
 }
 #main-article>.text>p:nth-child(2) {
     margin: 0;
-    font-size: 38px;
+    font-size: 44px;
 }
 #main-article>.text>p:nth-child(1) {
     margin: 0;
@@ -97,4 +89,22 @@ body {
 }
 p {
     margin: 8px 0;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: lightsalmon;
+    }
+
+    .grid-top>#content {
+        grid-template: 1fr 1fr / 1fr;
+    }
+
+    .grid-top {
+        grid-template: 1fr 10% 5fr/1fr;
+    }
+
+    .grid-top>#header {
+        height: 5px;
+    }
 }
