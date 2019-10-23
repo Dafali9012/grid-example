@@ -1,0 +1,23 @@
+* {
+    background: rgb(22, 22, 22);
+    color: white;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 100px 2fr;
+    grid-template-rows: 1fr 1fr;
+    /*
+    grid-column-gap: 10px;
+    row-gap: 50px;
+    */
+}
+
+section {
+    border:2px solid white;
+}
